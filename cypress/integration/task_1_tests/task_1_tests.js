@@ -1,5 +1,6 @@
 import { Given, When, Then, And, Before } from 'cypress-cucumber-preprocessor/steps'
 import {baseUrl, footballLiveEndPoint} from '../../fixtures/urls.js'
+import {assertEvents} from '../../fixtures/assertEvents.js'
 
 Before(() => {
     cy.WriteResponseBodyFileToFixtures(`${baseUrl}${footballLiveEndPoint}`, '../fixtures/footballLiveEndPointBody.json')
@@ -16,10 +17,7 @@ When('I hit the {string} endpoint', () => {
 //ToDo - duplicated code, need to be more dynamic but some complexity around what may be an unspecified amount of assertions
 Then('All events returned are football events', () => {
     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((footballLiveEndPointBody) => {
-        footballLiveEndPointBody.events.map(event => {
-            expect(event.className).to.eq('Football')
-            expect(event.typeName).to.eq('Football Live')
-        })
+        assertEvents(footballLiveEndPointBody, 2, 'className', 'Football','typeName', 'Football Live')
     })
 })
 
