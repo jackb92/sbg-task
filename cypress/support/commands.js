@@ -11,11 +11,15 @@ Cypress.Commands.add('WriteResponseBodyFileToFixtures', (url, pathToFixtures) =>
     })
 })
 
-// Cypress.Commands.add('AssertCorrectEventResponseReturned', (pathToFile,) => {
-//     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((body) => {
+// Cypress.Commands.add('AssertCorrectEventResponseReturned', (pathToFile, keyArr, valueArr) => {
+//     cy.readFile(pathToFile).then((body) => {
 //         body.events.map(event => {
-//             expect(event.className).to.eq('Football')
-//             expect(event.typeName).to.eq('Football Live')
-//         })
+//             for(var i = 0; i < keyArr.length; i++)
+//                 expect(event.keyArr[i]).to.eq(valueArr[i])
+//             })
 //     })
+// })
+
+// Cypress.Commands.add('test', (...arr) => {
+//     console.log(...arr)
 // })

@@ -13,6 +13,7 @@ When('I hit the {string} endpoint', () => {
     cy.assertStatusCode(`${baseUrl}${footballLiveEndPoint}`, 200)
 })
 
+//ToDo - duplicated code, need to be more dynamic but some complexity around what may be an unspecified amount of assertions
 Then('All events returned are football events', () => {
     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((footballLiveEndPointBody) => {
         footballLiveEndPointBody.events.map(event => {
@@ -22,7 +23,7 @@ Then('All events returned are football events', () => {
     })
 })
 
-And('Each event should have a home & away competitor', () => {
+And('Each event should have a home & away competitor', () => {  
     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((footballLiveEndPointBody) => {
         footballLiveEndPointBody.events.map(event => {
             expect(event.competitors[0].position).to.eq('home')
