@@ -3,7 +3,7 @@ import {baseUrl, footballLiveEndPoint} from '../../fixtures/urls.js'
 import {assertEvents} from '../../fixtures/assertEvents.js'
 
 Before(() => {
-    cy.WriteResponseBodyFileToFixtures(`${baseUrl}${footballLiveEndPoint}`, '../fixtures/footballLiveEndPointBody.json')
+    cy.WriteResponseBodyFileToFixtures(footballLiveEndPoint, '../fixtures/footballLiveEndPointBody.json')
 });
 
 Given('The base url is up', () => {
@@ -11,7 +11,7 @@ Given('The base url is up', () => {
 })
 
 When('I hit the {string} endpoint', () => {
-    cy.assertStatusCode(`${baseUrl}${footballLiveEndPoint}`, 200)
+    cy.assertStatusCode(footballLiveEndPoint, 200)
 })
 
 Then('All events returned are football events', () => {
