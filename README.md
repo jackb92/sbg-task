@@ -23,7 +23,8 @@ Node<br />
 ## Running tests
 Before tests can be ran you need to spin up the API using docker<br />
 You can do this by running command:<br /> 
-**docker run -it --rm --name sbg-tech-test-api -p 8888-8890:8888-8890 sbgtechtest/api**
+**docker run -it --rm --name sbg-tech-test-api -p 8888-8890:8888-8890 sbgtechtest/api**<br /> 
+The API will now be available on http://localhost:8888/ and you should be able to view the available routes by hitting the API root.
 
 In the project at the **sbg-task** level, run command **npm i** to ensure you have correct packages installed
 
