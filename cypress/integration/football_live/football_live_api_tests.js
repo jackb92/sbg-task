@@ -16,7 +16,7 @@ When('I hit the {string} endpoint', () => {
 
 Then('All events returned are football events', () => {
     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((footballLiveEndPointBody) => {
-        assertEvents(footballLiveEndPointBody, [['className', 'Football'],['typeName', 'Football Live']])
+        assertEvents(footballLiveEndPointBody, [['className', 'Football']])
     })
 })
 
