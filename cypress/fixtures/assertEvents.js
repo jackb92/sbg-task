@@ -1,4 +1,4 @@
-import { get } from "lodash"
+import {get} from "lodash"
 
 export function assertEvents(body, keyValueArr) {
     keyValueArr.forEach(keyValuePair => {

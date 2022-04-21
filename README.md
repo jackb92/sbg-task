@@ -21,21 +21,21 @@ Docker<br />
 Node<br />
 
 ## Running tests
-Before tests can be ran you need to spin up the API in docker<br />
+Before tests can be ran you need to spin up the API using docker<br />
 You can do this by running command:<br /> 
 **docker run -it --rm --name sbg-tech-test-api -p 8888-8890:8888-8890 sbgtechtest/api**
 
-In the project at the **sbg-task** level, run command **npm i** to ensure you have correct packages
+In the project at the **sbg-task** level, run command **npm i** to ensure you have correct packages installed
 
 There are two ways to run the Cypress tests, either in the Cypress GUI or headless<br />
-(if its your first time running cypress it can take a little while load up)
+(if its your first time running cypress it can take a little while to install)
 
 To run with the GUI:<br />
-Run command **npm run cypress** from the **sbg-task**<br />
+Run command **npm run cypress** from the **sbg-task** level<br />
 Once the GUI has loaded you can either click and run individual test files or run all test files by clicking 'run integration spec'<br />
 
 To run the tests in headless mode:<br />
-Run command **npm run headless** from the **sbg-task** <br />
+Run command **npm run headless** from the **sbg-task** level<br />
 You will be able to see the test results within the terminal<br />
 
 The framework makes use of the following packages:<br />
