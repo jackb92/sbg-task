@@ -1,7 +1,6 @@
 export function assertEvents(body, numberOfAssertions, ...keyValueArr) {
     for(let i = 1; i <= numberOfAssertions; i++){
         let eventIsArray = false
-
         body.events.map(event => {
             if(Array.isArray(event[keyValueArr[0]]) === false){
                 expect(event[keyValueArr[0]]).to.eq(keyValueArr[1])
@@ -11,12 +10,6 @@ export function assertEvents(body, numberOfAssertions, ...keyValueArr) {
                 eventIsArray = true
             }
         })
-        if(eventIsArray === false){
-            keyValueArr.splice(0,2)
-        } 
-        else {
-            keyValueArr.splice(0,3)
-        }
-        
+        eventIsArray === false ? keyValueArr.splice(0,2) : keyValueArr.splice(0,3)        
     }
 }  

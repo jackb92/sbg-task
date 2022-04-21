@@ -17,20 +17,20 @@ Then each event should have a home & away competitor<br />
 
 # Repo
 ## System Requirements
-Docker
-Node
+Docker<br />
+Node<br />
 
 ## Running tests
-Before tests can be ran you need to spin up the API in docker
-You can do this by running command docker run -it --rm --name sbg-tech-test-api -p 8888-8890:8888-8890 sbgtechtest/api in the terminal
+Before tests can be ran you need to spin up the API in docker<br />
+You can do this by running command docker run -it --rm --name sbg-tech-test-api -p 8888-8890:8888-8890 sbgtechtest/api in the terminal<br />
 
 There are two ways to run the Cypress tests, either in the Cypress GUI or headless
 
-To run with the GUI:
-Run command npx cypress open
-Once the GUI has loaded you can either click and run individual test files or run all test files by clicking 'run integration spec'
+To run with the GUI:<br />
+Run command npx cypress open<br />
+Once the GUI has loaded you can either click and run individual test files or run all test files by clicking 'run integration spec'<br />
 
-To run the tests in headless mode:
-Run command npx cypress run
-You will be able to see the test results within the terminal
+To run the tests in headless mode:<br />
+Run command npx cypress run<br />
+You will be able to see the test results within the terminal<br />
 
