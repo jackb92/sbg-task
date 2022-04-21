@@ -23,9 +23,10 @@ Then('All events returned are football events', () => {
 
 And('Each event should have a home & away competitor', () => {  
     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((footballLiveEndPointBody) => {
-        footballLiveEndPointBody.events.map(event => {
-            expect(event.competitors[0].position).to.eq('home')
-            expect(event.competitors[1].position).to.eq('away')
-        })
+        assertEvents(footballLiveEndPointBody, 2, 'competitors', 'position','home','competitors', 'position','away')
+        //footballLiveEndPointBody.events.map(event => {
+            // expect(event.competitors[0].position).to.eq('home')
+            // expect(event.competitors[1].position).to.eq('away')
+        //})
     })
 })
