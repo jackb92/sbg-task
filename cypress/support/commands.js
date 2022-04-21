@@ -10,16 +10,3 @@ Cypress.Commands.add('WriteResponseBodyFileToFixtures', (url, pathToFixtures) =>
         cy.writeFile(pathToFixtures, body)
     })
 })
-
-// Cypress.Commands.add('AssertCorrectEventResponseReturned', (pathToFile, keyArr, valueArr) => {
-//     cy.readFile(pathToFile).then((body) => {
-//         body.events.map(event => {
-//             for(var i = 0; i < keyArr.length; i++)
-//                 expect(event.keyArr[i]).to.eq(valueArr[i])
-//             })
-//     })
-// })
-
-// Cypress.Commands.add('test', (...arr) => {
-//     console.log(...arr)
-// })

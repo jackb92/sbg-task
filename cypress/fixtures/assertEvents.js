@@ -1,15 +1,9 @@
-export function assertEvents(body, numberOfAssertions, ...keyValueArr) {
-    for(let i = 1; i <= numberOfAssertions; i++){
-        let eventIsArray = false
+import { get } from "lodash"
+
+export function assertEvents(body, keyValueArr) {
+    keyValueArr.forEach(keyValuePair => {
         body.events.map(event => {
-            if(Array.isArray(event[keyValueArr[0]]) === false){
-                expect(event[keyValueArr[0]]).to.eq(keyValueArr[1])
-            }
-            else{
-                expect(event[keyValueArr[0]][i - 1][keyValueArr[1]]).to.eq(keyValueArr[2])
-                eventIsArray = true
-            }
+            expect(get(event,keyValuePair[0])).to.eq(keyValuePair[1])
         })
-        eventIsArray === false ? keyValueArr.splice(0,2) : keyValueArr.splice(0,3)        
-    }
-}  
+    })
+}

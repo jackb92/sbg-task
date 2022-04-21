@@ -16,12 +16,12 @@ When('I hit the {string} endpoint', () => {
 
 Then('All events returned are football events', () => {
     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((footballLiveEndPointBody) => {
-        assertEvents(footballLiveEndPointBody, 2, 'className', 'Football','typeName', 'Football Live')
+        assertEvents(footballLiveEndPointBody, [['className', 'Football'],['typeName', 'Football Live']])
     })
 })
 
 And('Each event should have a home & away competitor', () => {  
     cy.readFile('../fixtures/footballLiveEndPointBody.json').then((footballLiveEndPointBody) => {
-        assertEvents(footballLiveEndPointBody, 2, 'competitors', 'position','home','competitors', 'position','away')
+        assertEvents(footballLiveEndPointBody, [['competitors[0].position','home'],['competitors[1].position','away']])
     })
 })
