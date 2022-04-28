@@ -13,7 +13,6 @@ Before(() => {
 
 Given('The base url is up', () => {
     cy.assertStatusCode(baseUrl, 200)
-    console.log(footballLiveEndPointBody)
 })
 
 When('I hit the {string} endpoint', () => {
